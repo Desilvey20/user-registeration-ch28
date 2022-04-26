@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User registeration system</title>
+</head>
+<body>
+    <!-- inputs for registeration-->
+    <header>
+
+    </header>
+    <main>
+        <h2>Register a new user</h2>
+        <div class="form-container">
+            <!--
+                fname
+                lname
+                email(uname)
+                passsword(pass)
+                gender
+                age
+                address
+                phone
+                payment method
+                color
+            -->
+            <div class="form-control">
+                <label>First name: </label>
+                <input type="text" id="txtfname" placeholder="Enter your name">
+            </div>
+            <div class="form-control">
+                <label>Last name: </label>
+                <input type="text" id="txtlname" placeholder="Enter your name">
+            </div>
+            <div class="form-control">
+                <label>Email: </label>
+                <input type="email" id="txtemail" placeholder="Enter your email">
+            </div>
+            <div class="form-control">
+                <label>Password: </label>
+                <input type="password" id="txtpassword" placeholder="Enter your password">
+            </div>
+            <div class="form-control">
+                <label>Gender: </label>
+                <input type="gender" id="txtgender" placeholder="Enter your gender">
+            </div>
+            <div class="form-control">
+                <label>Age: </label>
+                <input type="age" id="txtage" placeholder="Enter your age">
+            </div>
+            <div class="form-control">
+                <label>Address: </label>
+                <input type="address" id="txtaddress" placeholder="Enter your address">
+            </div>
+            <div class="form-control">
+                <label>Phone: </label>
+                <input type="phone" id="txtphone" placeholder="Enter your phone">
+            </div>
+            <div class="form-control">
+                <label>Payment Method: </label>
+                <input type="payment" id="txtpayemnt" placeholder="Enter your payment method">
+            </div>
+            <div class="form-control">
+                <label>Color: </label>
+                <input type="color" id="txtcolor" placeholder="Enter your favorite color">
+            </div>
+
+            <button onclick="register();">Register</button>
+        </div>
+    </main>
+    <footer>
+
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="scripts/register.js"></script>
+</body>
+</html>
