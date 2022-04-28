@@ -15,6 +15,29 @@ class user{
     this.color=color;
    }
 }
+
+function isValid(user){
+    //mandatory email and password
+    let valid=true;
+    $("input").removeClass("input-error")
+    if(user.email.length==0){
+       valid=false
+       console.error("invalid email")
+       $("#txtemail").addClass("input-error");
+    }
+    if(user.password.length==0){
+       valid=false;
+       console.error("Invalid password")
+       $("#txtpassword").addClass("input-error");
+    }
+
+    return valid;
+
+
+
+}
+
+
 function register(){
    let inputfname= $("#txtfname").val();
    let inputlname= $("#txtlname").val();
@@ -29,8 +52,11 @@ function register(){
 
 //    console.log(inputfname,inputlname,inputemail,inputpassword);
    let newuser = new user(inputfname,inputlname,inputemail,inputpassword,inputgender,inputage,inputaddress,inputphone,inputpayment,inputcolor);
+   if(isValid(newuser)){
+      saveuser(newuser);
+   }
 
-   console.log(newuser);
+  
 }
 
 
