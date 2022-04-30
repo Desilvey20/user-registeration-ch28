@@ -32,10 +32,21 @@ function isValid(user){
     }
 
     return valid;
-
-
-
 }
+
+function validatepass(){
+   //get the value from the form
+   //compare if the password is less than 6 characters?
+   //$ function to change the css
+   let txtpass=$("#txtpassword");
+   let password=txtpass.val();
+   if(password.length<6){
+      txtpass.css("background","#ff9898");//jquery to change the css
+   }else{
+      txtpass.css("background","#64ce66");
+   }
+}
+
 
 
 function register(){
@@ -62,11 +73,13 @@ function register(){
 
 
 function init(){
-    console.log("init function");
+    console.log("register");
+    //hook events
+    $("#txtpassword").keyup(validatepass);
 
-    let user1 = new user("David","Desilvey","daviddesilvey@yahoo.com","thnyjm","male","29","isthmus way","760-555-5555","visa","red");
-    let user2 = new user("Bella","Rodriguez","bellarod@gmail.com","edcrfvr","female","28,","isthmus way","555-555-5555","mastercard","blue");
-    console.log(user1,user2);
+   //  let user1 = new user("David","Desilvey","daviddesilvey@yahoo.com","thnyjm","male","29","isthmus way","760-555-5555","visa","red");
+   //  let user2 = new user("Bella","Rodriguez","bellarod@gmail.com","edcrfvr","female","28,","isthmus way","555-555-5555","mastercard","blue");
+   //  console.log(user1,user2);
 }
 
 window.onload=init;
