@@ -54,6 +54,7 @@ function register(){
    let newuser = new user(inputfname,inputlname,inputemail,inputpassword,inputgender,inputage,inputaddress,inputphone,inputpayment,inputcolor);
    if(isValid(newuser)){
       saveuser(newuser);
+      $('input').val("");//clear the inputs
    }
 
   
