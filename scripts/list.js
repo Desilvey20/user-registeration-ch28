@@ -1,11 +1,11 @@
 function displayusers(usersArray){
     //travel the array
     //get each user//display users
-let tr="";
+let row;
 for(let i=0;i<usersArray.length;i++){
-    let user = usersArray.users[i];
-    tr+=`
-    <tr id="${user.id}">
+    let user = usersArray[i];
+    row=`
+    <tr>
             <td>${user.fname}</td>
             <td>${user.lname}</td>
             <td>${user.email}</td>
@@ -16,17 +16,17 @@ for(let i=0;i<usersArray.length;i++){
             <td>${user.phone}</td>
             <td>${user.payment}</td>
             <td>${user.color}</td>
-            <td><button onclick="deletePet();">🗑️</button></td>
-        </tr>
-        </div>`;
+            <td>
+        </tr>`;
+        console.log(row);
 }
-document.getElementById("user").innerHTML=tr;
+$("#userstable").append(row);
 
     //append the user on the html table
 }
 function init(){
     console.log("Listing users");
-    let users=readUsers();
+    let users=readusers();
     displayusers(users);
 }
 window.onload=init;

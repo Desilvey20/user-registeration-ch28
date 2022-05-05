@@ -15,7 +15,6 @@ class user{
     this.color=color;
    }
 }
-
 function isValid(user){
     //mandatory email and password
     let valid=true;
@@ -25,15 +24,15 @@ function isValid(user){
        console.error("invalid email")
        $("#txtemail").addClass("input-error");
     }
-    if(user.password.length==0){
+    if(user.email.length==0){
        valid=false;
        console.error("Invalid password")
        $("#txtpassword").addClass("input-error");
+      
     }
 
     return valid;
 }
-
 function validatepass(){
    //get the value from the form
    //compare if the password is less than 6 characters?
@@ -42,9 +41,17 @@ function validatepass(){
    let password=txtpass.val();
    if(password.length<6){
       txtpass.css("background","#ff9898");//jquery to change the css
+      displayError("The password is too short. ")
    }else{
       txtpass.css("background","#64ce66");
+      hideError();
    }
+}
+function displayError(msg){
+   $("#alertError").removeClass("hide").text(msg);
+}
+function hideError(){
+   $("#alertError").addClass("hide");
 }
 
 
@@ -65,7 +72,10 @@ function register(){
    let newuser = new user(inputfname,inputlname,inputemail,inputpassword,inputgender,inputage,inputaddress,inputphone,inputpayment,inputcolor);
    if(isValid(newuser)){
       saveuser(newuser);
+      hideError();
       $('input').val("");//clear the inputs
+   }else{
+      displayError("Please complete all fields")
    }
 
   

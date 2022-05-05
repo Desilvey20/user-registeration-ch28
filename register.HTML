@@ -13,25 +13,17 @@
         <h1>My awesome user registerion system!</h1>
         <nav class="menu">
             <a href="index.HTML">Home</a>
-            <a href="register.HTML">register</a>
+            <a href="register.HTML">Register</a>
         </nav>
 
     </header>
     <main>
         <h2>Register a new user</h2>
         <div class="form-container">
-            <!--
-                fname
-                lname
-                email(uname)
-                passsword(pass)
-                gender
-                age
-                address
-                phone
-                payment method
-                color
-            -->
+            <div>
+                <p id="alertError" class="alert-error hide">test
+                </p>
+            </div>
             <div class="form-control">
                 <label>First name: </label>
                 <input type="text" id="txtfname" placeholder="Enter your name">
@@ -64,10 +56,17 @@
                 <label>Phone: </label>
                 <input type="phone" id="txtphone" placeholder="Enter your phone">
             </div>
-            <div class="form-control">
-                <label>Payment Method: </label>
-                <input type="payment" id="txtpayemnt" placeholder="Enter your payment method">
-            </div>
+            <div>
+                <label>Payment method: </label>
+                <select class="form-control" input type="payment"
+                id="txtpayment">
+                <option value="visa">Visa</option>
+                <option value="Mastercard">Mastercard</option>
+                <option value="Discovery">Discovery</option>
+                </select>
+                </div>
+            <!-- <div class="form-control">
+                <input type="payment" id="txtpayemnt" placeholder="Enter your payment method">-->
             <div class="form-control">
                 <label>Color: </label>
                 <input type="color" id="txtcolor" placeholder="Enter your favorite color">
